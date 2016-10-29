@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Simulação de Erro de Parâmetro de Método</title>
+</h:head>
+<h:body>
+    <h:messages />
+
+    <h2>Clique no botão para simular</h2>
+
+    <h:form id="formulario">
+        <h:panelGrid columns="2">
+            <h:outputText value="Modelo: " />
+            <h:inputText id="modelo" value="#{carroBean.carro.modelo}" size="40" />
+
+            <h:outputText value="Cor: " />
+            <h:inputText id="cor" value="#{carroBean.carro.cor}" size="40" />
+
+            <h:outputText value="Placa: " />
+            <h:panelGroup>
+                <h:inputText id="placa" value="#{carroBean.carro.placa}" size="40" />
+                <h:outputText value=" Exemplo: HXP-0647" />
+            </h:panelGroup>
+
+            <h:outputText value="E-mail Proprietário: " />
+            <h:outputText id="email_proprietario" value="E-mail está nulo." />
+        </h:panelGrid>
+
+        <h:commandButton value="Simular Erro" action="#{carroBean.simularErroEmailProprietario}" />
+    </h:form>
+</h:body>
+</html>

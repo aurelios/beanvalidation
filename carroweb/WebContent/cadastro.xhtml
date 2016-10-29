@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Cadastro de Carro</title>
+</h:head>
+<h:body>
+    <h:messages />
+
+    <h2>Informe os dados do carro</h2>
+
+    <h:form id="formulario">
+        <h:panelGrid columns="2">
+            <h:outputText value="Roubado: " />
+            <h:selectBooleanCheckbox id="roubado" alue="#{carroBean.carro.roubado}" />
+
+            <h:outputText value="Modelo: " />
+            <h:inputText id="modelo" value="#{carroBean.carro.modelo}" size="40" />
+
+            <h:outputText value="Cor: " />
+            <h:inputText id="cor" value="#{carroBean.carro.cor}" size="40" />
+
+            <h:outputText value="Placa: " />
+            <h:panelGroup>
+                <h:inputText id="placa" value="#{carroBean.carro.placa}" size="40" />
+                <h:outputText value=" Exemplo: HXP-0647" />
+            </h:panelGroup>
+
+            <h:outputText value="E-mail Proprietário: " />
+            <h:inputText id="email" value="#{carroBean.carro.emailProprietario}" size="40" />
+
+            <h:outputText value="Data Próxima Revisão: " />
+            <h:inputText id="data_rev" value="#{carroBean.carro.dataProximaRevisao}" size="40">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText>
+
+            <h:outputText value="Ano Fabricação: " />
+            <h:inputText id="ano_fab" value="#{carroBean.carro.anoFabricacao}" size="40" />
+
+            <h:outputText value="Ano Modelo: " />
+            <h:inputText id="ano_modelo" value="#{carroBean.carro.anoModelo}" size="40" />
+        </h:panelGrid>
+
+        <h:commandButton value="Cadastrar" action="#{carroBean.salvarCarro}" />
+    </h:form>
+</h:body>
+</html>
